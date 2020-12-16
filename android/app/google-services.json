@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "6755344801",
+    "project_id": "medcare-67b61",
+    "storage_bucket": "medcare-67b61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6755344801:android:4f11c6b24b3352ac3babe0",
+        "android_client_info": {
+          "package_name": "com.example.flutter_medcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6755344801-71pmkv7up4b7v59ug2lk2qpi3so3oguq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAKN5IGei8OHoWHeR-bjdm4F3J9QZuD6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6755344801-71pmkv7up4b7v59ug2lk2qpi3so3oguq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -21,8 +21,22 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+
   flutter:
     sdk: flutter
+
+  firebase_core: ^0.5.3
+  firebase_database: ^4.4.0
+  firebase_auth: ^0.18.4+1
+  pinput: ^0.2.6
+  flutter_signin_button: ^1.0.0
+  firebase_storage: ^5.2.0
+  image_picker: ^0.6.7+15
+  cloud_firestore: ^0.14.4
+
+
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -58,8 +72,12 @@ flutter:
     - assets/healthcard.png
     - assets/consultancy.jpg
     - assets/sc6.png
+<<<<<<< HEAD
     - assets/images/
 
+=======
+    - assets/mastercardlogo.png
+>>>>>>> 8051d3b16d30ce9e27e5a8400e0f9e64f848e026
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

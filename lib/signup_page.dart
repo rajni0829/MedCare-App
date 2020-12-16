@@ -1,244 +1,250 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_medcare/Dashboard_page.dart';
+// import 'package:flutter_medcare/AuthenticationServices/A.dart';
+import 'signin_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_medcare/signin_page.dart';
-import 'Dashboard_page.dart';
 
-class SignUpPage extends StatelessWidget {
-
+class SignUpPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-        home: Signup()
-    );
-  }
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class Signup extends StatelessWidget {
+class _SignUpPageState extends State<SignUpPage> {
 
-  // Accessing value by _nameController.text
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
-  
-  String _nameError;
-  String _phoneError;
-  String _emailError;
-
-  final _formKey =GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  String _email, _password, _phone, _name;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
 
-      // backgroundColor: Color(0xFFCADCED),
       body: SingleChildScrollView(
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 100.0, left: 20.0),
-                child: Row(
-                  children: [
-                    Text(
-                      'Get on ',
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
 
-                    Text(
-                      'Board',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30.0,
-                        color: Colors.blue,
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),]
-                ),
-              ),
+        child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
 
-              Form(
-                child: Column(
-                  children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 40.0, right: 20.0),
-                    child: TextFormField(
-                      
-                      controller: _nameController,
-                      keyboardType: TextInputType.name,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black,)
-                        ),
-                        labelText: 'Full Name',
-                        prefixIcon: Icon(Icons.person, color: Colors.black, size: 20.0,),
-                        labelStyle: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 20.0, right: 20.0),
-                    child: TextFormField(
-                      
-                      controller: _emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black,)
-                        ),
-                        labelText: 'Email Id',
-                        prefixIcon: Icon(Icons.email, color: Colors.black,size: 20.0,),
-                        labelStyle: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 20.0, right: 20.0),
-                    child: TextFormField(
-                      
-                      controller: _phoneController,
-                      keyboardType: TextInputType.phone,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black,)
-                        ),
-                        labelText: 'Phone No.',
-                        prefixText: '+91 ',
-                        prefixIcon: Icon(Icons.phone, color: Colors.black,size: 20.0,),
-                        labelStyle: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ),
-                ]),
-              ),
-
-
-              SizedBox(height: 40,),
-
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "By signing up, you agree to our ",
-                      style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          color: Colors.grey,
-                          fontSize: 12.0
-                      ),
-                    ),
-
-                    InkWell(
-                      onTap: () {
-                        // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => TermsPage(),));
-                      },
-                      child: Text(
-                        "Terms",
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          color: Colors.grey,
-                          fontSize: 12.0,
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
-                    ),
-
-                    Text(
-                      " & ",
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Colors.grey,
-                        fontSize: 12.0,
-                      ),
-                    ),
-
-                    InkWell(
-                      onTap: () {
-                        // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => TermsPage(),));
-                      },
-                      child: Text(
-                        "Privacy Policy",
-                        style: TextStyle(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(top: 60.0, left: 20.0),
+                  child: Row(
+                      children: [
+                        Text(
+                          'Get on ',
+                          style: TextStyle(
+                            fontSize: 35.0,
                             fontFamily: 'Montserrat',
-                            color: Colors.grey,
-                            fontSize: 12.0,
-                            decoration: TextDecoration.underline
+                          ),
                         ),
-                      ),
-                    ),
-                  ]),
 
-              Padding(
-                padding: const EdgeInsets.fromLTRB(40.0, 10.0, 40.0, 40.0),
-
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.black
+                        Text(
+                          'Board',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 35.0,
+                            color: Colors.blue,
+                            fontFamily: 'Montserrat',
+                          ),
+                        ),]
                   ),
-                  alignment: Alignment.center,
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => DashboardPage(),));
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 10.0),
+                  child: TextFormField(
+                    validator: (input) {
+                      if(input.isEmpty){
+                        return 'Name required';
+                      }else{
+                        return null;
+                      }
                     },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
-
-                      child: Text(
-                        'Submit  &  Send OTP',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.bold
-                        ),
-
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black,)
                       ),
+                      labelText: 'Full Name',
+                      prefixIcon: Icon(Icons.person, color: Colors.black,size: 20.0,),
+                      labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),),
+                    onSaved: (input) => _name = input,
+                  ),
+                ),
+
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                  child: TextFormField(
+                    validator: (input) {
+                      if(input.length != 10){
+                        return 'Mobile Number not Valid';
+                      }else{
+                        return null;
+                      }
+                    },
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black,)
+                      ),
+                      labelText: 'Phone No.',
+                      prefixText: '+91 ',
+                      prefixIcon: Icon(Icons.phone, color: Colors.black,size: 20.0,),
+                      labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),),
+                    onSaved: (input) => _phone = input,
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                  child: TextFormField(
+                    validator: (input) {
+                      if(input.length < 6){
+                        return 'Email ID field can\'t remain empty';
+                      }
+                      else{
+                        return null;
+                      }
+                    },
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black,)
+                      ),
+                      labelText: 'Email ID',
+                      prefixIcon: Icon(Icons.email, color: Colors.black,size: 20.0,),
+                      labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),),
+                    onSaved: (input) => _email = input,
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                  child: TextFormField(
+                    validator: (input) {
+                      if(input.length < 6){
+                        return 'Password can\'t remain Empty';
+                      }else{
+                        return null;
+                      }
+                    },
+                    keyboardType: TextInputType.visiblePassword,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black,)
+                      ),
+                      labelText: 'Password',
+                      prefixIcon: Icon(Icons.security, color: Colors.black,size: 20.0,),
+                      labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey,
+                      ),),
+                    onSaved: (input) => _password = input,
+                    obscureText: true,
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0, bottom: 40.0),
+                  child: RaisedButton(
+                    padding: EdgeInsets.only(top:15.0, bottom: 15.0, right: 20.0, left: 20.0),
+
+                    onPressed: signUp,
+                    color: Colors.black,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        side: BorderSide(color: Colors.black)),
+                    child: Text('Sign Up',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold)
                     ),
                   ),
                 ),
-              ),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Already have an Account? ',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    color: Colors.black,
-                  ),),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Already have an Account? ',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          color: Colors.black,
+                        ),),
 
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SignInPage(),));
-                    },
-                    child: Text('Sign In',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Colors.black,
-                        decoration: TextDecoration.underline
-                      ),),
-                  ),
-                ]
-              )
-            ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen(),));
+                        },
+                        child: Text('Sign In',
+                          style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              color: Colors.black,
+                              decoration: TextDecoration.underline
+                          ),),
+                      ),
+
+                    ]
+                ),
+
+                SizedBox(height: 20.0,)
+
+              ],
+            )
         ),
       ),
     );
   }
+  //
+  void signUp() async {
+  //   dynamic result = await _auth.CreateNewUser(_email, _password);
+    if(_formKey.currentState.validate()){
+      _formKey.currentState.save();
+      try{
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _email, password: _password);
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'weak-password') {
+          print('The password provided is too weak.');
+        }
+        else if (e.code == 'email-already-in-use') {
+          Alert(context);
+        }
+      }
+
+      catch(e){
+        print(e.message);
+      }
+    }
+  }
+
+  void Alert(BuildContext context) {
+
+    var alertDialog = AlertDialog(
+      content: Text('Account already exists for the given email. '
+          'Try Signing Up using different email or Login to your Account.'),
+    );
+    
+    showDialog(
+      context: context,
+      builder: (BuildContext context){
+        return alertDialog;
+      },
+    );
+  }
 }
+
