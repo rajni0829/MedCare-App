@@ -21,7 +21,7 @@ List<Doctors> dummyDoctors = [
       name: "Adhisty Zara",
       specialist: "Neurologists",
       hospital: "----------",
-      urlimage: "assets/images/adhisty_zara_s.jpg",
+      urlimage: "assets/adhisty_zara_s.jpg",
       about: "-----------------------",
       schedule: [
         Schedule(
@@ -35,7 +35,7 @@ List<Doctors> dummyDoctors = [
       name: "-------------",
       specialist: "Orthopadic",
       hospital: "----------------------",
-      urlimage: "assets/images/aninditha_rahma_cahyadi_s.jpg",
+      urlimage: "assets/aninditha_rahma_cahyadi_s.jpg",
       about: "------------------------",
       schedule: [
         Schedule(
@@ -49,7 +49,7 @@ List<Doctors> dummyDoctors = [
       name: "-------------",
       specialist: "Clinical Psychology",
       hospital: "-----------",
-      urlimage: "assets/images/ayana_shahab.jpg",
+      urlimage: "assets/ayana_shahab.jpg",
       about: "------------------------",
       schedule: [
         Schedule(
@@ -63,7 +63,7 @@ List<Doctors> dummyDoctors = [
       name: "-----------------",
       specialist: "Acupuncture Specialist",
       hospital: "RSUD Mardjono",
-      urlimage: "assets/images/frieska_anastasia_laksani_s.jpg",
+      urlimage: "assets/frieska_anastasia_laksani_s.jpg",
       about: "---------------------",
       schedule: [
         Schedule(
@@ -77,7 +77,7 @@ List<Doctors> dummyDoctors = [
       name: "--------------------",
       specialist: "General Practitioners",
       hospital: "---------------------",
-      urlimage: "assets/images/michelle_christo_kusnadi_s.jpg",
+      urlimage: "assets/michelle_christo_kusnadi_s.jpg",
       about: "---------------------",
       schedule: [
         Schedule(

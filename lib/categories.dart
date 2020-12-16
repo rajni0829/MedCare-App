@@ -8,22 +8,22 @@ class Categories {
 List<Categories> dummyCategories = [
   Categories(
     name: "Mouth Specialist",
-    urlimage: "images/mouth.png",
+    urlimage: "assets/mouth.png",
   ),
   Categories(
     name: "Dentist",
-    urlimage: "assets/images/dentist.png",
+    urlimage: "assets/dentist.png",
   ),
   Categories(
     name: "Clinical Psychology",
-    urlimage: "assets/images/psiklinis.png",
+    urlimage: "assets/psiklinis.png",
   ),
   Categories(
     name: "Acupuncture Specialist",
-    urlimage: "assets/images/akupuntur.png",
+    urlimage: "assets/akupuntur.png",
   ),
   Categories(
     name: "General Practitioners",
-    urlimage: "assets/images/dokterumum.png",
+    urlimage: "assets/dokterumum.png",
   ),
 ];

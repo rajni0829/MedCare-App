@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Medcare Consultation',
+      title: 'MedCare Consultation',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -76,7 +76,7 @@ class GetStarted extends StatelessWidget {
             height: 350,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/intro1.png"),
+                image: AssetImage("assets/intro1.png"),
                 fit: BoxFit.cover,
               ),
             ),
