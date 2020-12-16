@@ -1,10 +1,12 @@
 import 'dart:async';
-
+import 'package:firebase_core/firebase_core.dart';
 import 'home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
   runApp(Medcare());
 }
 
