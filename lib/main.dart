@@ -18,24 +18,23 @@ class Medcare extends StatelessWidget {
   }
 }
 
-
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     Timer(
         Duration(seconds: 3),
-            ()=> Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context)=> HomePage(),)
-            )
-    );
+        () => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomePage(),
+            )));
   }
 
   @override
@@ -45,26 +44,20 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         child: Column(
           children: <Widget>[
-
             SizedBox(
               height: 140,
             ),
-
             Center(
-
-              child: Image.asset('assets/LOGO.jpg', height: MediaQuery.of(context).size.width*.7)
-            ),
-
+                child: Image.asset('assets/LOGO.jpg',
+                    height: MediaQuery.of(context).size.width * .7)),
             SizedBox(
               height: 90,
             ),
-
             Container(
               width: 40.0,
               alignment: Alignment.bottomCenter,
               child: Image.asset('assets/loadgif.gif'),
             ),
-
           ],
         ),
       ),
@@ -72,15 +65,12 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
-
-
 // decoration: BoxDecoration(
 //   image: DecorationImage(
 //     image: AssetImage('assets/.jpg'),
 //       fit: BoxFit.cover,
 //   )
 // ),
-
 
 // ch
 // Image.asset('assets/LOGO.jpg', width: MediaQuery.of(context).size.width*.5),
