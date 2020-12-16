@@ -69,6 +69,10 @@ flutter:
     - assets/consultancy.jpg
     - assets/sc6.png
     - assets/mastercardlogo.png
+<<<<<<< HEAD
+=======
+    - assets/
+>>>>>>> 3da1c87ecac752eb4eeb3e85f9cf916e537fd88f
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
