@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_medcare/Dashboard_page.dart';
+import 'package:flutter_medcare/DatabaseManager/DatabaseManager.dart';
 // import 'package:flutter_medcare/AuthenticationServices/A.dart';
 import 'signin_page.dart';
 import 'package:flutter/material.dart';
@@ -214,7 +214,11 @@ class _SignUpPageState extends State<SignUpPage> {
     if(_formKey.currentState.validate()){
       _formKey.currentState.save();
       try{
-        await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _email, password: _password);
+        UserCredential result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _email, password: _password);
+        User firebaseUser = result.user;
+        firebaseUser.updateProfile(displayName: _name);
+        // print(firebaseUser.uid);
+        await DatabaseManager().createUserData(_name, null, null, _phone, firebaseUser.uid);
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
 
       } on FirebaseAuthException catch (e) {
@@ -247,4 +251,3 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 }
-
