@@ -11,7 +11,7 @@ List<Categories> dummyCategories = [
     urlimage: "assets/mouth.png",
   ),
   Categories(
-    name: "Dentist",
+    name: "Sonologists",
     urlimage: "assets/dentist.png",
   ),
   Categories(
@@ -19,7 +19,7 @@ List<Categories> dummyCategories = [
     urlimage: "assets/psiklinis.png",
   ),
   Categories(
-    name: "Acupuncture Specialist",
+    name: "Radiologists",
     urlimage: "assets/akupuntur.png",
   ),
   Categories(

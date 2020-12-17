@@ -2,9 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_medcare/menuBar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_medcare/myHomePage.dart';
 import 'HealthCard/CardPage.dart';
 import 'wallet/walletmain.dart';
-import 'con_main.dart';
+import 'emergencyPage.dart';
+
 
 class DashboardPage extends StatelessWidget {
   @override
@@ -119,7 +121,7 @@ class Dashboard extends StatelessWidget {
                         InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Consultancy(),
+                              builder: (context) => MyHomePage(),
                             ));
                           },
 
@@ -202,6 +204,7 @@ class Dashboard extends StatelessWidget {
 
                         InkWell(
                           onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Emergency(),));
 
                           },
 
@@ -211,10 +214,10 @@ class Dashboard extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
 
                               children: [
-                                Image.asset("assets/reminder.png", scale: 15,),
-                                SizedBox(height: 10,),
+                                Image.network("https://lh3.googleusercontent.com/proxy/Ta_FzyV7o9Lx10jU3H1AsamoxPOj1WP9x8gVjQ8H4kqErTuFTltZlk9WNYul38yEa3-FuXyr_TpjR9af16fMQGIOEVo5646qbyStPsKxVnncQGyDXBTAEHd9jqpNPjhe9FVvQCsV4yk", scale: 7,),
+                                SizedBox(height: 15,),
 
-                                Text("Reminder",
+                                Text("Emergency",
                                   style: TextStyle(
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.bold,

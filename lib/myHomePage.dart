@@ -1,8 +1,11 @@
+import 'Dashboard_page.dart';
 import 'categoriesList.dart';
 import 'doctorList.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'menuBar.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -15,34 +18,44 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color(0xFF4be8ce),
+          elevation: 0.0,
+          actions: [
+            RaisedButton(
+                color: Color(0xFF4be8ce),
+                elevation: 0.0,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardPage()));
+                },
+                child: Row(
+                    children: [Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                      Text(
+                        "Back",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontFamily: "Montserrat",
+                          fontWeight: FontWeight.bold,
+                        ),)
+                    ])
+
+            )
+          ],
+        ),
+
+        drawer: sideBar(),
         key: _scaffoldKey,
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 50),
-              Padding(
-                padding: const EdgeInsets.only(right: 17),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(
-                        FontAwesomeIcons.list,
-                        size: 20,
-                        color: Colors.black,
-                      ),
-                      onPressed: () {},
-                    ),
-                    CircleAvatar(
-                      radius: 27,
-                      backgroundImage: AssetImage('assets/user1.png'),
-                      backgroundColor: Colors.black12,
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
+
+              SizedBox(height: 30.0,),
               Padding(
                 padding: const EdgeInsets.only(left: 15.0),
                 child: Text(
@@ -128,17 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        drawer: Drawer(
-          child: Column(
-            children: <Widget>[
-              DrawerHeader(
-                child: Icon(
-                  FontAwesomeIcons.star,
-                ),
-              ),
-            ],
-          ),
-        ),
+
       ),
     );
   }

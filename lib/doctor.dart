@@ -18,53 +18,53 @@ class Doctors {
 
 List<Doctors> dummyDoctors = [
   Doctors(
-      name: "Adhisty Zara",
-      specialist: "Neurologists",
-      hospital: "----------",
-      urlimage: "assets/adhisty_zara_s.jpg",
-      about: "-----------------------",
+      name: "Dr. Laxman Rathod",
+      specialist: "Radioologists",
+      hospital: "Solanki",
+      urlimage: "assets/Laxman.jpeg",
+      about: "From Sumerpur, Highly experienced",
       schedule: [
         Schedule(
             name: "Consultation",
-            date: "11",
+            date: "23",
             month: "Jan",
             day: "Monday",
             time: "9am - 10pm"),
       ]),
   Doctors(
-      name: "-------------",
-      specialist: "Orthopadic",
-      hospital: "----------------------",
-      urlimage: "assets/aninditha_rahma_cahyadi_s.jpg",
-      about: "------------------------",
+      name: "Sunil Gemawat",
+      specialist: "MBBS Sonologist",
+      hospital: "Kerawat",
+      urlimage: "assets/Sunil.jpeg",
+      about: "20 years of experience , Post Graduate Diploma in MCH",
       schedule: [
         Schedule(
             name: "Consultation",
-            date: "11",
-            month: "Jan",
+            date: "21",
+            month: "Dec",
             day: "Monday",
             time: "9am - 10pm"),
       ]),
   Doctors(
-      name: "-------------",
+      name: "Harmani Singh",
       specialist: "Clinical Psychology",
-      hospital: "-----------",
-      urlimage: "assets/ayana_shahab.jpg",
-      about: "------------------------",
+      hospital: "Medicare",
+      urlimage: "assets/Harmani.jpeg",
+      about: "15 years of experience",
       schedule: [
         Schedule(
             name: "Consultation",
-            date: "11",
-            month: "Jan",
+            date: "18",
+            month: "Dec",
             day: "Monday",
             time: "9am - 10pm"),
       ]),
   Doctors(
-      name: "-----------------",
+      name: "Dr. Shreya Awasthi",
       specialist: "Acupuncture Specialist",
-      hospital: "RSUD Mardjono",
-      urlimage: "assets/frieska_anastasia_laksani_s.jpg",
-      about: "---------------------",
+      hospital: "Birla ",
+      urlimage: "assets/Shreya.jpeg",
+      about: "5 years of experience, Post Graduate in MCH",
       schedule: [
         Schedule(
             name: "Consultation",
@@ -74,17 +74,17 @@ List<Doctors> dummyDoctors = [
             time: "9am - 10pm"),
       ]),
   Doctors(
-      name: "--------------------",
+      name: "Dr. Harshika Gupta",
       specialist: "General Practitioners",
-      hospital: "---------------------",
-      urlimage: "assets/michelle_christo_kusnadi_s.jpg",
-      about: "---------------------",
+      hospital: "Nigeria Complex",
+      urlimage: "assets/Harshika.jpeg",
+      about: "10 years of experience, Live in Gurgaon",
       schedule: [
         Schedule(
             name: "Consultation",
             date: "11",
-            month: "Jan",
-            day: "Monday",
+            month: "Dec",
+            day: "Wednesday",
             time: "9am - 10pm"),
       ]),
 ];

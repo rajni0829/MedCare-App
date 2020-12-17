@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bank Expenses',
-      home: DashboardPage(),
+      home: WalletDashboardPage(),
       theme: ThemeData(fontFamily: "Montserrat"),
       debugShowCheckedModeBanner: false,
     );
