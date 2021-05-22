@@ -1,6 +1,6 @@
 # flutter_medcare
 
-A new Flutter application.
+Flutter based Online Medical Application to help people in India by providing online medical consultancy with maintaining records of individual’s Health Cards.
 
 ## Getting Started
 
